@@ -1,0 +1,24 @@
+// import { useCallback } from "react";
+// import { Connector, useConnect } from "wagmi";
+
+// export function useConnectWithWagmi(onSuccess: () => void) {
+//   const connectType = useConnect();
+//   const { connect, reset } = connectType
+
+//   const connectWithLogs = useCallback(
+//     (connector: Connector) => {
+//       connect({connector}, {
+//         onSuccess: () => {
+//           console.log("===> Connected")
+//           onSuccess()
+//         },
+//         onError: (error: any) => {
+//           console.error("===>", error)
+//         }
+//       })
+//     },
+//     [connect, onSuccess, reset]
+//   )
+
+//   return { ...connectType, connect: connectWithLogs }
+// }
