@@ -2,6 +2,8 @@ import React, { Component, useEffect, useState } from 'react';
 import { useWalletConnectClient } from '../contexts/ClientContext';
 import withWalletConnectClient from '../hocs/WalletConnectClientHOC';
 import { Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
+// import { SwapWidget } from '@uniswap/widgets'
+import '@uniswap/widgets/fonts.css'
 
 interface TestComponentProps {
     walletConnectClient: {
@@ -43,12 +45,25 @@ class TestComponent extends Component<any, any> {
         connect();
     };
 
+    onUniswapConnect = () => {
+        // const { connectWithWagmi, uniswapConnector } = this.props;
+        // const { variables, connect } = connectWithWagmi
+
+        // connect(uniswapConnector);
+    }   
+
 
     renderContent = () => {
 
-        return (<Button variant="outlined" color="primary" onClick={this.onConnect}>
-            Connect
-        </Button>)
+        return <>
+            <Button variant="outlined" color="primary" onClick={this.onConnect}>
+                WalletConnect
+            </Button>
+            <Button variant="outlined" color="primary" onClick={this.onUniswapConnect}>
+                Uniswap Connect
+            </Button>
+            {/* <SwapWidget /> */}
+        </>
     };
     render() {
         return (
